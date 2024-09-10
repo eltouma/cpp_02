@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = Fixed
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
 MAKEFLAGS += --no-print-directory
@@ -6,7 +6,7 @@ MAKEFLAGS += --no-print-directory
 GREEN := \e[32m
 RESET :=\e[0m
 
-SRCS = megaphone.cpp
+SRCS = Fixed.cpp main.cpp
 
 OBJS_PATH = objs/
 
@@ -19,12 +19,12 @@ $(OBJS_PATH)%.o: %.cpp
 	$(CC) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@echo "\nCompilation megaphone: $(GREEN)success$(RESET)\n"
+	@echo "\nCompilation Fixed: $(GREEN)success$(RESET)\n"
 	$(CC) $(OBJS) -o $(NAME)
 
 clean:
 	/bin/rm -rf $(OBJS) $(OBJS_PATH)
-	@echo "\nMegaphone removed: $(GREEN)success$(RESET)\n"
+	@echo "\nFixed removed: $(GREEN)success$(RESET)\n"
 
 fclean:	clean
 	/bin/rm -rf ${NAME}
