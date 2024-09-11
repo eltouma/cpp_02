@@ -1,6 +1,6 @@
 NAME = Fixed
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
 MAKEFLAGS += --no-print-directory
 
 GREEN := \e[32m

@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:35:40 by eltouma           #+#    #+#             */
-/*   Updated: 2024/09/10 19:15:43 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/09/11 17:58:43 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,10 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << __func__ << " member function called" << std::endl;
 	this->_fixedPoint = raw;
+}
+
+std::ostream & operator<<(std::ostream & o, Fixed const & i)
+{
+	o << i.getRawBits();
+	return (o);
 }
