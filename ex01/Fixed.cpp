@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:35:40 by eltouma           #+#    #+#             */
-/*   Updated: 2024/09/16 17:36:15 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/09/18 16:52:36 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ Fixed::Fixed(const Fixed& obj)
 
 Fixed::Fixed(int const n)
 {
-	if (n >= 8388607)
-		std::cout << "Error 1" << std::endl;
 	std::cout << "Int constructor called" << std::endl;
+	if (n <= -8388607 || n >= 8388607)
+		throw std::invalid_argument("n is not valid");
 	_fixedPoint = n << _bits;
 }
 
 Fixed::Fixed(float const n)
 {
-	if (n >= 8388607.1 && n <= -8388607.1)
-		std::cout << "Error" << std::endl;
 	std::cout << "Float constructor called" << std::endl;
+	if (n >= 8388607.1 && n <= -8388607.1)
+		throw std::invalid_argument("n is not valid");
 	_fixedPoint = roundf(n * (1 << _bits));
 }
 
@@ -61,7 +61,7 @@ int Fixed::getRawBits(void) const
 
 int	Fixed::toInt(void) const
 {
-	return _fixedPoint / float(1 << this->_bits);
+	return _fixedPoint / (1 << this->_bits);
 }
 
 float	Fixed::toFloat(void) const

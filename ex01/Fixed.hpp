@@ -6,11 +6,12 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:48:56 by eltouma           #+#    #+#             */
-/*   Updated: 2024/09/16 17:22:41 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/09/18 16:46:55 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdexcept>
 #include <cmath>
 
 class 	Fixed
