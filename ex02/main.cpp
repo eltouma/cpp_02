@@ -22,62 +22,68 @@ int	main(int argc, char **argv)
 	}
 	try {
 		Fixed	a;
-//		Fixed const b(10);
+		Fixed const b(Fixed(5.05f) * Fixed(2));
+		Fixed c(10);
 //		Fixed const b(83886010);
 //		Fixed const c(42.42f);
 //		Fixed const d(b);
 
 	//	a = Fixed(1234.4321f);
-	  	a = Fixed(10);
+//	  	a = Fixed(10);
 	 // 	a = Fixed(0);
-/*
+		std::cout << "a > b ?\n";
 		if (a > b)
-			std::cout << "true a > b\n";
+			std::cout << "true " << a <<  " > " << b << "\n";
 		else
-			std::cout << "false a pas > b\n";
+			std::cout << "false " << a <<  " < " << b << "\n";
 
+		std::cout << "\na < b ?\n";
 		if (a < b)
-			std::cout << "true a < b\n";
+			std::cout << "true " << a <<  " < " << b << "\n";
 		else
-			std::cout << "false a pas < b\n";
+			std::cout << "false " << a <<  " > " << b << "\n";
 
+		std::cout << "\na >= b ?\n";
 		if (a >= b)
-			std::cout << "true a >= b\n";
+			std::cout << "true " << a <<  " >= " << b << "\n";
 		else
-			std::cout << "false a pas >= b\n";
+			std::cout << "false " << a <<  " <= " << b << "\n";
 
+		std::cout << "\na <= b ?\n";
 		if (a <= b)
-			std::cout << "true a <= b\n";
+			std::cout << "true " << a <<  " <= " << b << "\n";
 		else
-			std::cout << "false a pas <= b\n";
+			std::cout << "false " << a <<  " >= " << b << "\n";
 
+		std::cout << "\na == b ?\n";
 		if (a == b)
-			std::cout << "true a == b\n";
+			std::cout << "true " << a <<  " == " << b << "\n";
 		else
-			std::cout << "false a pas == b\n";
+			std::cout << "false " << a <<  " != " << b << "\n";
 
+		std::cout << "\na != b ?\n";
 		if (a != b)
-			std::cout << "true a != b\n";
+			std::cout << "true " << a <<  " != " << b << "\n\n";
 		else
-			std::cout << "false a pas != b\n";
-		std::cout << "a / 2 = " << (a / 2) << " bitch\n";
-*/
-//		Fixed m = a + 3;
-	//	std::cout << "a + 3 = " << m << " bitch\n";
-		std::cout << a << "  + 3 = " << (a + 2) << " bitch\n";
-//		std::cout << a << " - 2 = " << (a - 2) << " bitch\n";
-	//	std::cout << "a * 2" << (a * 2) << " bitch\n";
-	//	std::cout << "a / 0" << (a / 0)  << "NO BITCH\n";
-	/*		
-		std::cout << "a is " << a << std::endl;
-		std::cout << "b is " << b << std::endl;
-		std::cout << "c is " << c << std::endl;
-		std::cout << "d is " << d << std::endl;
-		std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-		std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-		std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-		std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-*/
+			std::cout << "false " << a <<  " == " << b << "\n\n";
+		
+		std::cout << a << " + 2 = " << (a + 2) << " \n";
+		std::cout << a << " - 2 = " << (a - 2) << " \n";
+		std::cout << "a * 2 = " << (a * 2) << " \n";
+		std::cout << "a / 2 = " << (a / 2)  << " \n\n";
+		std::cout <<  "a is " << a << std::endl;
+		std::cout << "++a is " << ++a << std::endl;
+		std::cout <<  "a is " << a << std::endl;
+		std::cout <<  "a++ is " << a++ << std::endl;
+		std::cout <<  "a is " << a << std::endl;
+		std::cout << "--a is " << --a << std::endl;
+		std::cout <<  "a is " << a << std::endl;
+		std::cout <<  "a-- is " << a-- << std::endl;
+		std::cout <<  "a is " << a << "\n\n";
+		std::cout <<  "b is " << b << "\n\n";
+		std::cout << "Min is: "  << Fixed::min(a, c) << "\n";
+		std::cout << "Max is: " << Fixed::max(a, c) << "\n";
+		// std::cout << "a / 0 = " << (a / 0)  << " \n\n";
 	}
 	catch (std::invalid_argument& e)
 	{

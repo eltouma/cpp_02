@@ -48,7 +48,6 @@ Fixed::~Fixed(void)
 
 Fixed &	Fixed::operator=(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator= called" << std::endl;
 	if (this != &rhs)
 		_fixedPoint = rhs.getRawBits(); 
 	return (*this);
@@ -56,78 +55,115 @@ Fixed &	Fixed::operator=(const Fixed& rhs)
 
 int Fixed::operator>(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator> called" << std::endl;
 	return (_fixedPoint > rhs.getRawBits()); 
 }
 
 int Fixed::operator<(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator< called" << std::endl;
 	return (_fixedPoint < rhs.getRawBits()); 
 }
 
 int Fixed::operator>=(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator>= called" << std::endl;
 	return (_fixedPoint >= rhs.getRawBits()); 
 }
 
 int Fixed::operator<=(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator<= called" << std::endl;
 	return (_fixedPoint <= rhs.getRawBits()); 
 }
 
 int Fixed::operator==(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator== called" << std::endl;
 	return (_fixedPoint == rhs.getRawBits()); 
 }
 
 int Fixed::operator!=(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator!= called" << std::endl;
 	return (_fixedPoint != rhs.getRawBits()); 
 }
 
-/////
-
-void	Fixed::setRawBits(int const raw)
+float Fixed::operator+(const Fixed& rhs)
 {
-	_fixedPoint = raw;
+	return (this->toFloat() + rhs.toFloat());
 }
 
-int Fixed::operator+(const Fixed& rhs)
+float Fixed::operator-(const Fixed& rhs)
 {
-	//std::cout << "Copy assignment operator+ called" << std::endl;
-//	return (_fixedPoint + rhs.getRawBits()); 
-	
-//	return (toFloat() + rhs.toFloat());
-std::cout << "fixedPoint " << _fixedPoint << "\n";	
-return 	_fixedPoint + rhs.getRawBits(); 
-//	return (*this);
-}
-
-int Fixed::operator-(const Fixed& rhs)
-{
-//	std::cout << "Copy assignment operator- called" << std::endl;
 	return (toFloat() - rhs.toFloat());
-	//return (_fixedPoint - rhs.getRawBits()); 
 }
 
-int Fixed::operator*(const Fixed& rhs)
+float Fixed::operator*(const Fixed& rhs)
 {
-//	std::cout << "Copy assignment operator* called" << std::endl;
-	return (_fixedPoint * rhs.getRawBits()); 
+	return (toFloat() * rhs.toFloat()); 
 }
 
-int Fixed::operator/(const Fixed& rhs)
+float Fixed::operator/(const Fixed& rhs)
 {
-	//std::cout << "Copy assignment operator/ called" << std::endl;
 	if (rhs.getRawBits() == 0)
-		throw std::invalid_argument("0 is not valid");
+		throw std::invalid_argument("ZeroDivisionError (divided by 0)");
 	return (_fixedPoint / rhs.getRawBits()); 
 }
+
+Fixed&  Fixed::operator++()
+{
+	_fixedPoint += 1; // << _bits;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed	tmp = *this;
+	++*this;
+	return tmp;
+}
+
+Fixed& Fixed::operator--()
+{
+	_fixedPoint -= 1; //  << _bits;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp = *this;
+	--*this;
+	return tmp;
+}
+
+/*
+Fixed	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.toFloat() <= b.toFloat())
+		return a;
+	return b;
+}
+
+*/
+
+float	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.toFloat() <= b.toFloat())
+		return a.toFloat();
+	return b.toFloat();
+}
+
+/*
+float	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.toFloat() >= b.toFloat())
+		return a.toFloat();
+	return b.toFloat();
+}
+*/
+
+float	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.toFloat() >= b.toFloat())
+		return a.toFloat();
+	return b.toFloat();
+}
+
 int Fixed::getRawBits(void) const
 {
 	return (_fixedPoint);
