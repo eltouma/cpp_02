@@ -44,12 +44,9 @@ public:
 	float	toFloat(void) const;
 	int	toInt(void) const;
 	static float min(Fixed& a, Fixed& b);
-//	static float& min(Fixed& a, Fixed& b);
-//	static Fixed& min(Fixed& a, Fixed& b);
+	static float min(const Fixed& a, const Fixed& b);
 	static float max(Fixed& a, Fixed& b);
-	//static float& min(const Fixed& a, const Fixed& b);
-//	static float& min(const Fixed& a, const Fixed& b);
-//	static Fixed& max(Fixed& a, Fixed& b);
+	static float max(const Fixed& a, const Fixed& b);
 };
 
 std::ostream & operator<<(std::ostream & o, Fixed const & i);
