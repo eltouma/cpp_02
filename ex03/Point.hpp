@@ -11,12 +11,11 @@ public:
 	Point(void);
 	Point(float const x, float const y);
 	Point(const Point& obj); 
-	//Point(const Fixed& obj);
-	//Fixed & operator=(const Point& rhs);
 	Point & operator=(const Point& rhs);
 	~Point(void);
 	
-//	bool bsp( Point const a, Point const b, Point const c, Point const point);
+	float   calcul_area(Point const a, Point const b, Point const c);	
+	bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 	Fixed	getPointX(void) const;
 	Fixed	getPointY(void) const;

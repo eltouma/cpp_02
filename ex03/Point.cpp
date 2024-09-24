@@ -6,9 +6,6 @@ Point::Point(void) : _x(0), _y(0)
 
 Point::Point(float const x, float const y) : _x(x), _y(y)
 {
-//	Ne fonctionne pas parce que _x et _y sont const ?
-//	this->_x = x;
-//	this->_y = y;
 }
 
 Point::Point(const Point& obj) : _x(obj.getPointX()), _y(obj.getPointY())

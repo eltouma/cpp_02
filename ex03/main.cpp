@@ -21,20 +21,26 @@ int	main(int argc, char **argv)
 		std::cout << "Error\nWrong number of argument." << std::endl;
 		return (1);
 	}
-	Fixed	a;
-	Fixed 	b;
+	Point point;
 
-	Point	p;
-	Point	q(2, 4);
-	Point	r(q);
-	r = p;
+	Point const	a(0,0);
+	Point const	b(20, 0);
+	Point const	c(10, 30);
+	Point const	p1(10, 15);
+	Point const	p2(25, 20);
+	Point const	p3(5, 5);
+	Point const	p4(2.5, 20);
+	Point const	p5(15, 15);
+	Point const	p6(10, 30);
+	Point const	p7(15, 5);
 
-	std::cout << "a: " <<  a << std::endl;
-	std::cout << "b: " <<  b << std::endl;
-	std::cout << "p: " <<  p << std::endl;
-	std::cout << "q: " <<  q << std::endl;
-	std::cout << "r: " <<  r << std::endl;
-	
+	point.bsp(a, b, c, p1);
+	point.bsp(a, b, c, p2);
+	point.bsp(a, b, c, p3);
+	point.bsp(a, b, c, p4);
+	point.bsp(a, b, c, p5);
+	point.bsp(a, b, c, p6);
+	point.bsp(a, b, c, p7);
 /*
 	try {
 		
