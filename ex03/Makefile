@@ -6,7 +6,7 @@ MAKEFLAGS += --no-print-directory
 GREEN := \e[32m
 RESET :=\e[0m
 
-SRCS = Fixed.cpp main.cpp
+SRCS = Fixed.cpp Point.cpp bsp.cpp main.cpp
 
 OBJS_PATH = objs/
 
