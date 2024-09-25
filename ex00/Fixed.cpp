@@ -28,7 +28,7 @@ Fixed::Fixed(const Fixed& obj)
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructed called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &	Fixed::operator=(const Fixed& rhs)
