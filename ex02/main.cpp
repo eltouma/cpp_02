@@ -26,37 +26,37 @@ int	main(int argc, char **argv)
 		Fixed c(Fixed(5.05f) * Fixed(2));
 		Fixed d(24.02f);
 		Fixed e(91);
-		std::cout << "a > b ?\n";
+		std::cout << a << " > " << b << " ?\n";
 		if (a > b)
 			std::cout << "true " << a <<  " > " << b << "\n";
 		else
 			std::cout << "false " << a <<  " < " << b << "\n";
 
-		std::cout << "\na < b ?\n";
+		std::cout << "\n" << a << " < " << b << " ?\n";
 		if (a < b)
 			std::cout << "true " << a <<  " < " << b << "\n";
 		else
 			std::cout << "false " << a <<  " > " << b << "\n";
 
-		std::cout << "\na >= b ?\n";
+		std::cout << "\n" << a << " >= " << b << " ?\n";
 		if (a >= b)
 			std::cout << "true " << a <<  " >= " << b << "\n";
 		else
 			std::cout << "false " << a <<  " <= " << b << "\n";
 
-		std::cout << "\na <= b ?\n";
+		std::cout << "\n" << a << " <= " << b << " ?\n";
 		if (a <= b)
 			std::cout << "true " << a <<  " <= " << b << "\n";
 		else
 			std::cout << "false " << a <<  " >= " << b << "\n";
 
-		std::cout << "\na == b ?\n";
+		std::cout << "\n" << a << " == " << b << " ?\n";
 		if (a == b)
 			std::cout << "true " << a <<  " == " << b << "\n";
 		else
 			std::cout << "false " << a <<  " != " << b << "\n";
 
-		std::cout << "\na != b ?\n";
+		std::cout << "\n" << a << " != " << b << " ?\n";
 		if (a != b)
 			std::cout << "true " << a <<  " != " << b << "\n\n";
 		else
@@ -64,9 +64,11 @@ int	main(int argc, char **argv)
 		
 		std::cout << a << " + 2 = " << (a + 2) << " \n";
 		std::cout << a << " - 2 = " << (a - 2) << " \n";
-		std::cout << "a * 2 = " << (a * 2) << " \n";
-		std::cout << "e * 0 = " << (e * 0) << " \n";
-		std::cout << "a / 2 = " << (a / 2)  << " \n\n";
+		std::cout << a << " * 2 = " << (a * 2) << " \n";
+		std::cout << e << " * 0.9f = " << (e * 0.9f) << " \n";
+		std::cout << e << " + 10 = " << (e + 10) << " \n";
+//		std::cout << e << " / 0 = " << (e / 0) << " \n";
+		std::cout << a << " / 2 = " << (a / 2)  << " \n\n";
 		std::cout <<  "a is " << a << std::endl;
 		std::cout << "++a is " << ++a << std::endl;
 		std::cout <<  "a is " << a << std::endl;
