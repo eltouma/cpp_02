@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 		Fixed	a;
 		Fixed const b(10);
 		//Fixed const b(83886010);
-		Fixed const c(42.42f);
-		// Fixed const c(83886042.42f);
+//		Fixed const c(42.42f);
+		Fixed const c(83886042.42f);
 		Fixed const d(b);
 
 		a = Fixed(1234.4321f);
