@@ -26,42 +26,37 @@ int	main(int argc, char **argv)
 		Fixed c(Fixed(5.05f) * Fixed(2));
 		Fixed d(24.02f);
 		Fixed e(91);
+
 		std::cout << a << " > " << b << " ?\n";
 		if (a > b)
 			std::cout << "true " << a <<  " > " << b << "\n";
 		else
 			std::cout << "false " << a <<  " < " << b << "\n";
-
 		std::cout << "\n" << a << " < " << b << " ?\n";
 		if (a < b)
 			std::cout << "true " << a <<  " < " << b << "\n";
 		else
 			std::cout << "false " << a <<  " > " << b << "\n";
-
 		std::cout << "\n" << a << " >= " << b << " ?\n";
 		if (a >= b)
 			std::cout << "true " << a <<  " >= " << b << "\n";
 		else
 			std::cout << "false " << a <<  " <= " << b << "\n";
-
 		std::cout << "\n" << a << " <= " << b << " ?\n";
 		if (a <= b)
 			std::cout << "true " << a <<  " <= " << b << "\n";
 		else
 			std::cout << "false " << a <<  " >= " << b << "\n";
-
 		std::cout << "\n" << a << " == " << b << " ?\n";
 		if (a == b)
 			std::cout << "true " << a <<  " == " << b << "\n";
 		else
 			std::cout << "false " << a <<  " != " << b << "\n";
-
 		std::cout << "\n" << a << " != " << b << " ?\n";
 		if (a != b)
 			std::cout << "true " << a <<  " != " << b << "\n\n";
 		else
 			std::cout << "false " << a <<  " == " << b << "\n\n";
-		
 		std::cout << a << " + 2 = " << (a + 2) << " \n";
 		std::cout << a << " - 2 = " << (a - 2) << " \n";
 		std::cout << a << " * 2 = " << (a * 2) << " \n";
@@ -79,12 +74,10 @@ int	main(int argc, char **argv)
 		std::cout <<  "a-- is " << a-- << std::endl;
 		std::cout <<  "a is " << a << "\n\n";
 		std::cout <<  "b is " << b << "\n\n";
-
 		std::cout << "Min is: "  << Fixed::min(a, c) << "\n";
 		std::cout << "Min const is: "  << Fixed::min(a, b) << "\n";
 		std::cout << "Min is: "  << Fixed::min(d, e) << "\n";
 		std::cout << "Min const is: "  << Fixed::min(d, e) << "\n\n";
-
 		std::cout << "Max is: " << Fixed::max(a, c) << "\n";
 		std::cout << "Max const is: " << Fixed::max(a, b) << "\n";
 		std::cout << "Max is: " << Fixed::max(d, e) << "\n";
