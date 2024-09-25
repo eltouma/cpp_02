@@ -29,20 +29,15 @@ Fixed::Fixed(int const n)
 {
 	std::cout << "Int constructor called" << std::endl;
 	if (n <= -8388607 || n >= 8388607)
-		throw std::invalid_argument("Int is not valid");
+		throw std::invalid_argument("Int invalid");
 	_fixedPoint = n << _bits;
 }
 
-#include <sstream> 
 Fixed::Fixed(float const n)
 {
 	std::cout << "Float constructor called" << std::endl;
 	if (n >= 8388607.1 || n <= -8388607.1)
-	{
-		std::ostringstream oss;
-		oss << n << " is not valid";
-		throw std::invalid_argument(oss.str());
-	}
+		throw std::invalid_argument("Float invalid");
 	_fixedPoint = roundf(n * (1 << _bits));
 }
 
