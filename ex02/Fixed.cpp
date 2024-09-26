@@ -16,18 +16,15 @@ int const	Fixed::_bits = 8;
 
 Fixed::Fixed(void) : _fixedPoint(0)
 {
-//	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& obj)
 {
-//	std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
 }
 
 Fixed::Fixed(int const n)
 {
-//	std::cout << "Int constructor called" << std::endl;
 	if (n <= -8388607 || n >= 8388607)
 		throw std::invalid_argument("Int is not valid");
 	_fixedPoint = n << _bits;
@@ -35,7 +32,6 @@ Fixed::Fixed(int const n)
 
 Fixed::Fixed(float const n)
 {
-//	std::cout << "Float constructor called" << std::endl;
 	if (n >= 8388607.1 && n <= -8388607.1)
 		throw std::invalid_argument("Float is not valid");
 	_fixedPoint = roundf(n * (1 << _bits));
@@ -43,7 +39,6 @@ Fixed::Fixed(float const n)
 
 Fixed::~Fixed(void)
 {
-//	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &	Fixed::operator=(const Fixed& rhs)
@@ -90,12 +85,16 @@ float Fixed::operator+(const Fixed& rhs)
 
 float Fixed::operator-(const Fixed& rhs)
 {
-	return (toFloat() - rhs.toFloat());
+	return (this->toFloat() - rhs.toFloat());
 }
 
 float Fixed::operator*(const Fixed& rhs)
 {
-	return (toFloat() * rhs.toFloat()); 
+	float result;
+
+	result = rhs.toFloat() * 10;
+	result = roundf(result) / 10;
+	return (this->toFloat() * result);
 }
 
 float Fixed::operator/(const Fixed& rhs)
@@ -107,7 +106,7 @@ float Fixed::operator/(const Fixed& rhs)
 
 Fixed&  Fixed::operator++()
 {
-	_fixedPoint += 1; // << _bits;
+	_fixedPoint += 1;
 	return *this;
 }
 
@@ -120,7 +119,7 @@ Fixed Fixed::operator++(int)
 
 Fixed& Fixed::operator--()
 {
-	_fixedPoint -= 1; //  << _bits;
+	_fixedPoint -= 1;
 	return *this;
 }
 

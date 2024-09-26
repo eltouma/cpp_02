@@ -85,12 +85,16 @@ float Fixed::operator+(const Fixed& rhs)
 
 float Fixed::operator-(const Fixed& rhs)
 {
-	return (toFloat() - rhs.toFloat());
+	return (this->toFloat() - rhs.toFloat());
 }
 
 float Fixed::operator*(const Fixed& rhs)
 {
-	return (toFloat() * rhs.toFloat()); 
+	float result;
+
+	result = rhs.toFloat() * 10;
+	result = roundf(result) / 10;
+	return (this->toFloat() * result);
 }
 
 float Fixed::operator/(const Fixed& rhs)
@@ -102,7 +106,7 @@ float Fixed::operator/(const Fixed& rhs)
 
 Fixed&  Fixed::operator++()
 {
-	_fixedPoint += 1; // << _bits;
+	_fixedPoint += 1;
 	return *this;
 }
 
@@ -115,7 +119,7 @@ Fixed Fixed::operator++(int)
 
 Fixed& Fixed::operator--()
 {
-	_fixedPoint -= 1; //  << _bits;
+	_fixedPoint -= 1;
 	return *this;
 }
 

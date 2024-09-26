@@ -23,7 +23,6 @@ Fixed::Fixed(const Fixed& obj)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
-	return ;
 }
 
 Fixed::~Fixed(void)

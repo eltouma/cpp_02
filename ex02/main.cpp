@@ -61,7 +61,12 @@ int	main(int argc, char **argv)
 		std::cout << a << " - 2 = " << (a - 2) << " \n";
 		std::cout << a << " * 2 = " << (a * 2) << " \n";
 		std::cout << e << " * 0.9f = " << (e * 0.9f) << " \n";
+		std::cout << e << " * 0.3f = " << (e * 0.3f) << " \n";
+		std::cout << e << " * 3 = " << (e * 3) << " \n";
 		std::cout << e << " + 10 = " << (e + 10) << " \n";
+		std::cout << e << " - 10 = " << (e - 10) << " \n";
+		std::cout << e << " / 10 = " << (e / 10) << " \n";
+		std::cout << e << " / 0.9f = " << (e / 0.9f) << " \n";
 //		std::cout << e << " / 0 = " << (e / 0) << " \n";
 		std::cout << a << " / 2 = " << (a / 2)  << " \n\n";
 		std::cout <<  "a is " << a << std::endl;
